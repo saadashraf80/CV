@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,9pt]{extarticle}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -20,23 +20,25 @@
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
+\usepackage{parskip}
+\setlength{\parskip}{0pt}
 
 %other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.85]{geometry}
+\usepackage[a4paper,left=0.4in,right=0.4in,top=0.25in,bottom=0.25in]{geometry}
 \usepackage{ltablex}
-\keepXColumns         
-\setlength\LTpre{8pt} 
-\setlength\LTpost{8pt}
+\keepXColumns
+\setlength\LTpre{0pt}
+\setlength\LTpost{0pt}
 
 %tabularx environment
 \usepackage{tabularx}
 
 %for lists within experience section
 \usepackage{enumitem}
+\setlist[itemize]{topsep=0pt,itemsep=0pt,parsep=0pt,leftmargin=*}
 
 % centered version of 'X' col. type
 \newcolumntype{C}{>{\centering\arraybackslash}X} 
@@ -55,7 +57,7 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{6pt}{6pt}
+\titlespacing{\section}{0pt}{2pt}{2pt}
 
 %for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
@@ -115,7 +117,7 @@ Phone: +92 307 5777194 \\
 
 %Interests/ Keywords/ Summary
 \section{Summary}
-Enthusiastic Software Engineering student focused on solving complex problems, developing scalable systems, and exploring innovative areas of Computer Science research.
+Enthusiastic Software Engineer focused on solving complex problems, developing scalable systems, and exploring innovative areas of Computer Science research.
 
 
 \section{Education}
@@ -151,17 +153,16 @@ Enthusiastic Software Engineering student focused on solving complex problems, d
 % Developing backend for a ride-hailing app and building RAG pipelines to automate in-app support.
 % } \\
 
-\textbf{Bazaar Technologies} \\[3pt]
-
+\textbf{Bazaar Technologies} \\
 \textbf{Engineering Trainee} & \hfill August 2025 – April 2026 \\
 \multicolumn{2}{@{}p{\linewidth}@{}}{
 \begin{itemize}
-    \item Contributed to the development of Bazaar Pro Portal (portal.bazaarpro.co) which serves as the platform for businesses to put in their demands in order to get a quotation from Bazaar.
-    \item Rebuilt the card payment feature by integrating with HBL and Cybersource, improving payment reliability, reducing payment failures to near 0\%\ and eliminating chargebacks.
-    \item Eliminated security flaws in existing APIs that could have exposed sensitive user data.
-    \item Integrated FBR digital invoicing via WebDNAWorks, ensuring regulatory compliance and enabling legal, automated invoice reporting.
+    \item Contributed to the development of Bazaar Pro Portal (portal.bazaarpro.co), which serves as the platform for 500+ businesses to put in their demands in order to get a quotation from Bazaar.
+    \item Rebuilt the card payment feature by integrating with HBL and Cybersource, reducing payment failures to near 0\%\ and eliminating chargebacks while handling hundreds of payments seamlessly and guarding against duplications.
+    \item Eliminated security flaws in 4 existing APIs that entertained 5--10 requests on every order placement journey and could have exposed sensitive user data.
+    \item Integrated FBR digital invoicing via WebDNAWorks, ensuring regulatory compliance and enabling legal, automated reporting of 1000s of invoices on a daily basis.
 \end{itemize}
-} \\[6pt]
+} \\[2pt]
 
 \textbf{Engineering Intern} & \hfill June 2025 – August 2025 \\
 \multicolumn{2}{@{}p{\linewidth}@{}}{
@@ -169,41 +170,12 @@ Worked with the Finance squad and gained experience with payment flows and compl
 \begin{itemize}
     \item Made refunds for card payments instant via a wallet-first approach; 47\% of customers retained funds in their wallet.
     \item Integrated a new payment gateway (JazzCash) into the mobile app, resulting in an 11\% increase in digitally paid orders.
-    \item Migrated microservices to the latest stable versions of Java and Spring Boot.
+    \item Safely migrated 10+ critical microservices to the latest stable versions of Java and Spring Boot, ensuring zero downtime.
 \end{itemize}
 } \\[5pt]
 
 
 \end{tabularx}
-
-\section{Research Experience}
-
-\begin{tabularx}{\linewidth}{ @{} l X @{} }
-
-\textbf{Deep Learning Research Intern, TUKL DLL SEECS} & \hfill Jun 2024 – Nov 2024 \\
-\multicolumn{2}{@{}p{\linewidth}@{}}{
-Worked on EEG classification and explainable AI models and a chatbot for querying 600+ EEG recordings with the ability to append more data.
-\begin{itemize}
-    \item Conducted a thorough literature review of existing techniques for EEG classification through deep neural networks.
-    \item Researched different explainability techniques and applied LIME, SHAP and Grad-CAM to EEG data.
-    \item Made a chatbot using Retrieval Augmented Generation to query statistics from EEG recordings in natural language.
-\end{itemize}
-    
-} \\[5pt]
-
-\textbf{Undergraduate Research Collaborator, TUKL DLL SEECS} & \hfill May 2025 – Present \\
-\multicolumn{2}{@{}p{\linewidth}@{}}{
-Working on my final year project 'Adaptive Web Interaction: Leveraging Reinforcement Learning for Comprehensive and on natural language report generation from EEG recordings 
-\begin{itemize}
-    \item Training agents based on small language models for autonomous web navigation using on-policy reinforcement learning.
-    \item Created a web extension in which language models can be integrated and actions can be taken on the user's browser following a natual language prompt given by the user.
-\end{itemize}
-    
-} \\[5pt]
-
-\end{tabularx}
-
-
 
 
 %Experience
@@ -215,47 +187,36 @@ Working on my final year project 'Adaptive Web Interaction: Leveraging Reinforce
 
 \begin{tabularx}{\linewidth}{ @{}X@{} }
 \textbf{Search Engine} \hfill \href{https://github.com/saad1551/SearchEngine}{[GitHub]} \\
-Built a large-scale search engine indexing 110k+ articles, experimenting with various search \\
-algorithms from the academic literature and implementing barrelling techniques described in \\
-The Anatomy of a Large-Scale Hypertextual Web Search Engine (Brin \&\ Page, 1998). \\[3.75pt]
+Built a large-scale search engine indexing 110k+ articles, experimenting with various search algorithms from the academic literature and implementing barrelling techniques described in The Anatomy of a Large-Scale Hypertextual Web Search Engine (Brin \&\ Page, 1998). \\[0pt]
 
 \textbf{V-Therapist} \hfill \href{https://github.com/saad1551/psychologist-language-model}{[GitHub]} \\
-Built a virtual psychologist using memory enhancement techniques on small language models. \\
-Carried out research on the possible memory enhancement techniques and eventually went \\
-with vector databases which gave the best performance. \\[3.75pt]
+Built a virtual psychologist using memory enhancement techniques on small language models. Carried out research on the possible memory enhancement techniques and eventually went with vector databases which gave the best performance. \\[0pt]
 
 \textbf{FairGig} \hfill \href{https://fairgig.online}{[Live]} \\
-Microservices-based gig worker rights platform (SOFTEC 2026) with 7 backend services (FastAPI + Express), \\
-React frontend, LLM-powered shift logging, vision-based verification, and statistical anomaly detection. \\[3.75pt]
+Microservices-based gig worker rights platform (SOFTEC 2026) with 7 backend services (FastAPI + Express), React frontend, LLM-powered shift logging, vision-based verification, and statistical anomaly detection. \\[0pt]
 
-\textbf{Web-Sense} \hfill \href{https://github.com/saad1551/final-year-project}{[GitHub]} \\
-An ongoing research project, also my senior year project, \\
-in which we are training small language models \\
-using reinforcement learning to effectively and reliably perform the task of web navigation. \\
-Researching different on-policy RL techniques to use the available \\
-datasets in improving the performance of these models. \\[3.75pt]
+\textbf{Workout Tracking API} \hfill \href{https://github.com/saad1551/golearn/tree/main/fem_project}{[GitHub]} \\
+Go backend for tracking workouts and exercise entries, built with chi router and PostgreSQL. Implemented token-based authentication, user-scoped CRUD operations, middleware-driven authorization, and database migrations with a containerized Docker Compose setup. \\[0pt]
 
 \textbf{Scored} \hfill \href{https://github.com/saad1551/cricketScoreboard}{[GitHub]} \\
-A complete cricket scoring system along with a win predictor consistent with all the complex \\
-rules and playing conditions of the game. The win predictor was based on previous statistics \\
-of the players taking part in the game.\\[3.75pt]
+A complete cricket scoring system along with a win predictor consistent with all the complex rules and playing conditions of the game. The win predictor was based on previous statistics of the players taking part in the game.\\[0pt]
 
 \textbf{Book Reviews Backend} \hfill \href{https://github.com/saad1551/expressBookReviews}{[GitHub]} \\
-NodeJS + Express app with auth and review system using middlewares. \\[3.75pt]
+NodeJS + Express app with auth and review system using middlewares. \\[0pt]
 
 \textbf{EEG Chatbot} \hfill \href{https://github.com/saad1551/eeg-chatbot}{[GitHub]} \\
-LangChain-based bot to query EEG statistics and specifics via natural language. \\[3.75pt]
+LangChain-based bot to query EEG statistics and specifics via natural language. \\[0pt]
 
 \textbf{Dastkaar E-commerce} \hfill \href{https://github.com/saad1551/web-engineering-project-backend}{[GitHub]} \\
-Platform enabling rural women to sell handmade goods online. \\[3.75pt]
+Platform enabling rural women to sell handmade goods online. \\[0pt]
 
-% \textbf{Digit Recognition} \hfill \href{https://github.com/saad1551/DeepLearning}{[GitHub]} \\[3.75pt]
+% \textbf{Digit Recognition} \hfill \href{https://github.com/saad1551/DeepLearning}{[GitHub]} \\[0pt]
 % Classified MNIST digits using VGG16 with 96\% test accuracy. \\
 
 
 
 \textbf{Plant Shop Frontend} \hfill \href{https://saad1551.github.io/e-plantShopping/}{[Live]} \\
-ReactJS store with cart, Redux-based state, and product management. \\[3.75pt]
+ReactJS store with cart, Redux-based state, and product management. \\[0pt]
 
 \textbf{Conference Planner} \hfill \href{https://saad1551.github.io/react-conference-planner-app/}{[Live]} \\
 ReactJS + Redux app to plan events across multiple categories. \\
@@ -267,10 +228,10 @@ ReactJS + Redux app to plan events across multiple categories. \\
 
 
 
-% \textbf{Cricket Shots Classifier} & \hfill \href{https://github.com/saad1551/DeepLearning}{[GitHub]} \\[3.75pt]
+% \textbf{Cricket Shots Classifier} & \hfill \href{https://github.com/saad1551/DeepLearning}{[GitHub]} \\[0pt]
 % VGG16-based model to detect cricket shots (88\% accuracy). \\
 
-% \textbf{Disaster Tweets} & \hfill \href{https://www.kaggle.com/code/saadashraf88/nlp-disaster}{[Kaggle]} \\[3.75pt]
+% \textbf{Disaster Tweets} & \hfill \href{https://www.kaggle.com/code/saadashraf88/nlp-disaster}{[Kaggle]} \\[0pt]
 % TensorFlow model to classify tweets as real disaster or not. \\
 \end{tabularx}
 
@@ -278,11 +239,12 @@ ReactJS + Redux app to plan events across multiple categories. \\
 
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Programming languages: &  \normalsize{Javascript, Python, C, C++, Java, Kotlin} \\
-Backend: &  \normalsize{NodeJS + ExpressJS, Django, Springboot} \\
+Programming languages: &  \normalsize{Javascript, TypeScript, Python, C, C++, Java, Kotlin, Go} \\
+Backend: &  \normalsize{NodeJS + ExpressJS, Django, Springboot, Laravel} \\
 Frontend:  &  \normalsize{ReactJS} \\
-Databases:  &  \normalsize{MongoDB, MySQL, PostgreSQL, PostGIS, SQLite, Redis} \\
-DevOps:  &  \normalsize{Docker, Kubernetes, CI/CD} \\
+Databases:  &  \normalsize{MongoDB, MySQL, PostgreSQL, Firestore, PostGIS, SQLite, Redis} \\
+DevOps:  &  \normalsize{Docker, Kubernetes, CI/CD, GitHub Actions} \\
+Analytics:  &  \normalsize{Looker} \\
 \end{tabularx}
 
 
@@ -351,11 +313,7 @@ Deep Learning Specialization by \textbf{DeepLearning.AI, Stanford University} & 
 \begin{tabularx}{\linewidth}{@{}X r@{}}
 \textbf{Marketing Executive, Google Developer Student Club (NUST)} 
 & Sep 2024 -- May 2025 \\
-\multicolumn{2}{@{}X@{}}{Successfully marketed multiple events and gathered audiences of 200--500 people.} \\[6pt]
-
-\textbf{Team Member, NUST Cricket Team} 
-& Sep 2023 -- May 2024 \\
-\multicolumn{2}{@{}X@{}}{Represented NUST in inter-university games and tournaments.} \\
+\multicolumn{2}{@{}X@{}}{Successfully marketed multiple events and gathered audiences of 200--500 people.} \\
 \end{tabularx}
 
 
